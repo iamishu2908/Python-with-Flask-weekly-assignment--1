@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input, textarea, button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1em;
+        }
+        textarea {
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fill the Feedback Form</h1>
+    <form method="POST" action="/feedback">
+        <input type="text" name="name" placeholder="Enter Your Name" required>
+        <textarea name="feedback" placeholder="Enter Your Feedback" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>View past feedbacks:</h2>
+    <ul>
+        {% for entry in feedback_list %}
+            <li><strong>{{ entry.name }}:</strong> {{ entry.feedback }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

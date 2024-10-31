@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator!</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Calculator !</h1>
+        <h3>Let's add 2 numbers</h3>
+        <form method="POST" action="/calculator">
+            <input type="number" name="num1" placeholder="Enter first number" required>
+            <input type="number" name="num2" placeholder="Enter second number" required>
+            <button type="submit">Add</button>
+        </form>
+        {% if result is not none %}
+            <h2>Result is {{ result }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
